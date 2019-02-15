@@ -62,7 +62,7 @@ else
             <div class="row">
     	       <div class="col-lg-4"></div>
     	       <div class="col-lg-4"><h3 class="text-center"> ZIBELLI Ludovic</h3></div>
-    	       <div class="col-lg-4"></div>
+    	       <div class="col-lg-4">Salut</div>
     		</div>
     	</div>
     </footer>
