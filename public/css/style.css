@@ -1,0 +1,65 @@
+/*Conexion page userView */
+
+.connexion
+{
+	display: flex;
+	margin: auto;
+	align-items: auto;
+	justify-content: auto;
+	text-align: auto;
+}
+
+table
+{
+	margin: auto;
+}
+
+.user
+{
+	margin-top: 100px;
+	padding-top: 10px;
+	padding-bottom: 10px;  
+}
+
+.form-signin
+{
+	width: 300px;
+	margin-right: auto;
+}
+
+.lien
+{
+	padding-top: 10px;
+}
+
+.card
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.title_admin
+{
+	margin-top: 5px;
+}
+
+.list-group
+{
+	margin-top: 10px;
+}
+
+header
+{
+	background-image:url(/projet3/public/images/original_ALASKA_banner.jpg);
+	margin-top:10px;
+
+
+}
+
+body
+{
+	background-color: #E8DDDB;
+	margin-top: 30px;
+
+
+}
