@@ -60,9 +60,24 @@ else
     <footer>
         <div class="container">
             <div class="row">
-    	       <div class="col-lg-4"></div>
+    	       <div class="col-lg-4">
+                    <ul>
+                        <li></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Mention legals</a></li>   
+               </div>
     	       <div class="col-lg-4"><h3 class="text-center"> ZIBELLI Ludovic</h3></div>
-    	       <div class="col-lg-4">Salut</div>
+    	       <div class="col-lg-4">
+                    <div class="container">
+                        <div class="row">
+                            <h3 class="col-lg-12">Reseau sociaux</h3></br>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4"></div>
+                            <div class="col-lg-4"></div>
+                        </div> 
+               </div>
     		</div>
     	</div>
     </footer>
