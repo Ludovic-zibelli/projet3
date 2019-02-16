@@ -4,13 +4,12 @@ session_start();
 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 {
     $welcom = 'Bonjour ' . $_SESSION['pseudo'].'</br>';
-    $lien = '<a class="" href="index.php?action=online">Bonjour  '. $_SESSION['pseudo'].'</a>';
-    $statu = '<a class="" href="view/backend/deconexion.php">Deconexion</a>';
+    $statu = '<a class="" href="index.php?action=online">Bonjour  '. $_SESSION['pseudo'].'</a><a class="" href="view/backend/deconexion.php">(Deconexion)</a>';
     
 }
 else
 {
-    $lien = '<p class="" >Bonjour</p>';
+    
     $statu = '<a class="" href="view/frontend/userView.php">Connexion</a>';
 }
 ?>
@@ -45,7 +44,7 @@ else
         </div>
         <ul class=" nav nav-bar lien">
             <li class="active"><a class="navbar-brand" href="/projet3/index.php"><i class="fas fa-home"> Accueil</i></a></li>
-            <li><?php echo $lien; ?></li>
+            <li></li>
         </ul>
 
         
@@ -63,8 +62,7 @@ else
                     <ul class="nav flex-column text-align">
                         <li class="nav-item"><?php echo $statu; ?></li>
                         <li class="nav-item"><a href="#">Contact</a></li>
-                        <li class="nav-item"><a href="#">Mention legals</a></li>
-                        <li class="nav-item"><?php echo $lien; ?></li>  
+                        <li class="nav-item"><a href="#">Mention legals</a></li>  
                     </ul> 
                </div>
     	       <div class="col-lg-4"><h3 class="text-center"> ZIBELLI Ludovic</h3></div>
