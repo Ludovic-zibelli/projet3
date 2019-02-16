@@ -4,14 +4,14 @@ session_start();
 if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 {
     $welcom = 'Bonjour ' . $_SESSION['pseudo'].'</br>';
-    $lien = '<a class="navbar-brand" href="index.php?action=online">Bonjour  '. $_SESSION['pseudo'].'</a>';
-    $statu = '<a class="navbar-brand" href="view/backend/deconexion.php">Deconexion</a>';
+    $lien = '<a class="" href="index.php?action=online">Bonjour  '. $_SESSION['pseudo'].'</a>';
+    $statu = '<a class="" href="view/backend/deconexion.php">Deconexion</a>';
     
 }
 else
 {
-    $lien = '<p class="navbar-brand" >Bonjour</p>';
-    $statu = '<a class="navbar-brand" href="view/frontend/userView.php">Connexion</a>';
+    $lien = '<p class="" >Bonjour</p>';
+    $statu = '<a class="" href="view/frontend/userView.php">Connexion</a>';
 }
 ?>
 
@@ -45,7 +45,6 @@ else
         </div>
         <ul class=" nav nav-bar lien">
             <li class="active"><a class="navbar-brand" href="/projet3/index.php"><i class="fas fa-home"> Accueil</i></a></li>
-            <li><?php echo $statu; ?></li>
             <li><?php echo $lien; ?></li>
         </ul>
 
@@ -61,21 +60,24 @@ else
         <div class="container">
             <div class="row">
     	       <div class="col-lg-4">
-                    <ul>
-                        <li></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Mention legals</a></li>   
+                    <ul class="nav flex-column text-align">
+                        <li class="nav-item"><?php echo $statu; ?></li>
+                        <li class="nav-item"><a href="#">Contact</a></li>
+                        <li class="nav-item"><a href="#">Mention legals</a></li>
+                        <li class="nav-item"><?php echo $lien; ?></li>  
+                    </ul> 
                </div>
     	       <div class="col-lg-4"><h3 class="text-center"> ZIBELLI Ludovic</h3></div>
     	       <div class="col-lg-4">
-                    <div class="container">
+                    <div class="container  text-center">
                         <div class="row">
-                            <h3 class="col-lg-12">Reseau sociaux</h3></br>
+                            <h4 class="col-lg-12">Reseau sociaux</h4></br>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-4"></div>
-                            <div class="col-lg-4"></div>
+                        <div class="row reseau">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/facebook.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/twitter.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/Snapchat.png"></a></div>
                         </div> 
                </div>
     		</div>
