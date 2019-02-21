@@ -14,6 +14,13 @@ class commentManager extends Manager
 		return $comments; 
 	} 
 
+	public function getCommentSignal()
+	{
+		$db = $this-> dbConnect();
+		$req = $db->query('SELECT id, author, comment,post_id, DATE_FORMAT(creation_date , \'%d/%m/%Y à %Hh%imin%ss\') AS comment_date_fr, signaler FROM comments');
+		return $req;
+	}
+
 	public function postComments($postId, $author, $comment)
 	{
 		$db = $this->dbConnect();
