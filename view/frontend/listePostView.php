@@ -24,7 +24,7 @@
                                 <strong><h1 class="blog-post-title text-center"><?php echo ($data['title']); ?></h1></strong>
                                 <h4 class="blog-post-title">Chapitre : <?php echo ($data['chapitre']); ?></h4>
                                 <p class="blog-post-meta">le <?php echo $data['creation_date_fr']; ?></p>
-                                <blockquote><?php echo nl2br($data['content']); ?></blockquote>
+                                <blockquote><?php echo substr($data['content'], 0, 245).'...'; ?></blockquote>
                                 <em><a class="btn btn-success" href="index.php?action=post&id=<?php echo $data['id']; ?>">Commentaires  <span class="badge badge-light"><?php echo ($nbr_comments); ?></span></a></em>
                             <hr>
                             </div>
