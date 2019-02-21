@@ -194,6 +194,8 @@ function online()
 		{
 			$PostManager = new \openclassrooms\blog\model\postManager();
 			$posts = $PostManager->getPosts();
+			$signalStatus = new \openclassrooms\blog\model\commentManager();
+			$signaler = $signalStatus->getCommentSignal();
 
 			require('view/backend/viewAdmin.php');
 		}
