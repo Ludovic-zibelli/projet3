@@ -11,17 +11,51 @@ else
     header('location: /projet3/index.php');
 }
 $title='Gestion du blog'; 
-$h_1='Gestion du blog'; 
+$h_1='Gestion du blog | ' . $welcom; 
 
 ob_start(); ?>
 	<body>
 		
-		
-		<div class="blog-post-title text-center"><?php echo $welcom ; ?> bienvenu sur la page de gestion du blog</div>
 
 		
 		<?php
+        while ($data_signal = $signaler->fetch())
+        {
+            if($data_signal['signaler'])
+            {
+        ?>
+                <main class="container">
+                    <div class="row">
+                        <div class="col-md-12 blog-main">
+                            <div class="card card border-danger mb-3">
+                                <div class="card-header">
+                                    <div class="container">
+                                    <div class="row">
+                                    <div class="col-md-6 title_admin"><h4>Le commentaire de <?php echo $data_signal['author']; ?> a etait signaler !</h4></div>
 
+                                    <ul class="nav justify-content-end col-md-6">
+                                            <li class="nav-item"><a href="/projet3/index.php?action=delComment&id=<?php echo $data_signal['id']; ?>&postId=<?php echo $data_signal['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> (Supprimer) </a></li>
+                                            <li class="nav-item"><a href="index.php?action=signal&id=<?php echo htmlspecialchars($data_signal['id']);?>&postid=<?php echo htmlspecialchars($data_signal['post_id']);?>">Designaler</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text"><?php echo $data_signal['comment'];?> </p>
+                        </div>
+                        <div class="card-footer text-center">
+                            <p class="card-meta">Commentaire emis le : <?php echo $data_signal['comment_date_fr']; ?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <?php
+            }
+
+        }
 
 
 		while ($data = $posts->fetch())
