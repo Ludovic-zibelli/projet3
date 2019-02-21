@@ -13,7 +13,7 @@
             selector: 'textarea',
             height: 500,
             entity_encoding : "raw",
-            
+
           });
         </script>
     </head>
@@ -38,27 +38,43 @@
         <div class="navbar-header">
             <a href="#" class="navbar-brand"><h3><?= $h_1 ?></h3></a>
         </div>
-        <ul class=" nav nav-bar lien">
+        <h3><ul class=" nav nav-bar lien">
             <li class="active"><a class="navbar-brand" href="/projet3/index.php"><i class="fas fa-home"> Accueil</i></a></li>
             <li><a class="navbar-brand" href="view/backend/addPostView.php">Ajouter un billet</a></li>
             <li><a class="navbar-brand" href="view/backend/deconexion.php">Deconexion</a></li>
-            <li><a class="navbar-brand" href="/projet3/index.php?action=online">Retour</a></li>
-        </ul>
+        </ul></h3>
 
         
         </div>
     </div>
 
-    <body class="">
+    <body>
+        <div  class="text-center"><a class="nav-link" href="/projet3/index.php?action=online">Retour a l'accueil de l'admin</a></div>
         <?= $content ?>
     </body>
 
     <footer>
         <div class="container">
             <div class="row">
-               <div class="col-lg-4"></div>
-               <div class="col-lg-4"><h3> ZIBELLI Ludovic</h3></div>
-               <div class="col-lg-4"></div>
+               <div class="col-lg-4">
+                    <ul class="nav flex-column text-align">
+                        <li class="nav-item"><a href="#">Contact</a></li>
+                        <li class="nav-item"><a href="#">Mention legals</a></li>  
+                    </ul> 
+               </div>
+               <div class="col-lg-4"><h4 class="text-center"><i class="far fa-copyright"> Copyright Jean Forteroche 2019</i></h4></div>
+               <div class="col-lg-4">
+                    <div class="container  text-center">
+                        <div class="row">
+                            <h4 class="col-lg-12">Reseau sociaux</h4></br>
+                        </div>
+                        <div class="row reseau">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/facebook.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/twitter.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/Snapchat.png"></a></div>
+                        </div> 
+               </div>
             </div>
         </div>
     </footer>
