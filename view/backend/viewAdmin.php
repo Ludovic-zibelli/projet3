@@ -31,10 +31,10 @@ ob_start(); ?>
                                 <div class="card-header">
                                     <div class="container">
                                     <div class="row">
-                                    <div class="col-md-6 title_admin"><h4>Le commentaire de <?php echo $data_signal['author']; ?> a etait signaler !</h4></div>
+                                    <div class="col-md-6 title_admin"><h4>Le commentaire de <?php echo $data_signal['author']; ?> a était signalé !</h4></div>
 
                                     <ul class="nav justify-content-end col-md-6">
-                                            <li class="nav-item"><a class ="nav-link btn btn-primary btn-sm" href="/projet3/index.php?action=delComment&id=<?php echo $data_signal['id']; ?>&postId=<?php echo $data_signal['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> (Supprimer) </a></li>
+                                            <li class="nav-item"><a class ="nav-link btn btn-primary btn-sm" href="/projet3/index.php?action=delComment&id=<?php echo $data_signal['id']; ?>&postId=<?php echo $data_signal['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> Supprimer </a></li>
                                             <li class="nav-item"><a class ="nav-link btn btn-primary btn-sm" href="index.php?action=signal&id=<?php echo htmlspecialchars($data_signal['id']);?>&postid=<?php echo htmlspecialchars($data_signal['post_id']);?>">Designaler</a></li>
                                     </ul>
                                 </div>
