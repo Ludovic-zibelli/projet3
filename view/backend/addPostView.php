@@ -19,7 +19,7 @@ ob_start(); ?>
 	<div class="container">
 		<div class="row">
 				<div class="col-lg-0"></div>
-				<form action="/projet3/index.php?action=addPost" method="POST" class="form-horizontal col-lg-12">
+				<form enctype="multipart/form-data" action="/projet3/index.php?action=addPost" method="POST" class="form-horizontal col-lg-12">
 					<div class="form-group row list-inline">
 						<label for="title" class="col-form-label list-inline-item">Titre : </label>
 						<input type="text" name="title" class="form-control list-inline-item">
@@ -27,6 +27,12 @@ ob_start(); ?>
 					<div class="form-group row list-inline">
 						<label for="content" class="col-form-label list-inline-item">Text : </label>
 						<textarea name="content" id="content" class="form-control list-inline-item" cols="30" rows="30"></textarea>
+					</div>
+
+					<div class="form-group row list-inline">
+						<label for="fichier_a_uploader" class="col-form-label list-inline-item" title="Recherchez le fichier à uploader !">Ajouter une photo :</label>
+						<input type="hidden" name="MAX_FILE_SIZE" value="10000"  />
+            			<input name="image" type="file" id="image_uploade" class="form-control list-inline-item"/>
 					</div>
 
 					<div class="form-group row list-inline">
