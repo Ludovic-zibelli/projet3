@@ -65,7 +65,7 @@ else
                         <li class="nav-item"><a href="#">Mention legals</a></li>  
                     </ul> 
                </div>
-    	       <div class="col-lg-4"><h3 class="text-center"> ZIBELLI Ludovic</h3></div>
+    	       <div class="col-lg-4"><h4 class="text-center copyright"><i class="far fa-copyright"> Copyright Jean Forteroche 2019</i></h4></div>
     	       <div class="col-lg-4">
                     <div class="container  text-center">
                         <div class="row">
