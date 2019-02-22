@@ -67,8 +67,12 @@ function delPost($id)
 
 function addPost($title, $content,$chapitre,$online)
 {
+
+	$addPict = new openclassrooms\blog\model\postManager();
+	$upload = $addPict->uploadPicture();
+
 	$addPost = new openclassrooms\blog\model\postManager();
-	$add = $addPost->addPost($title,$content,$chapitre,$online);
+	$add = $addPost->addPost($title,$content,$chapitre,$online,$upload);
 
 	if($add === false)
 	{
