@@ -82,4 +82,5 @@ class commentManager extends Manager
 		$nbr_ligne = $req->rowCount();
 		return $nbr_ligne;
 	}
+
 }
