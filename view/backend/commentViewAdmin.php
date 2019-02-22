@@ -34,8 +34,10 @@ ob_start();
                                     <div class="row">
                                     <div class="col-sm-8"></div>
                                     <div class="col-sm-4">
-                                        <a class ="nav-link btn btn-primary btn-sm" href="/projet3/index.php?action=delComment&id=<?php echo $comments['id']; ?>&postId=<?php echo $comments['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> (Supprimer) </a>
-                                        <a class ="nav-link btn btn-primary btn-sm" href="index.php?action=signal&id=<?php echo htmlspecialchars($comments['id']);?>&postid=<?php echo htmlspecialchars($comments['post_id']);?>">Designaler</a>
+                                        <ul class="nav justify-content-end">
+                                        <li><a class ="nav-link btn btn-primary btn-sm" href="/projet3/index.php?action=delComment&id=<?php echo $comments['id']; ?>&postId=<?php echo $comments['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> Supprimer </a></li>
+                                        <li><a class ="nav-link btn btn-primary btn-sm" href="index.php?action=signal&id=<?php echo htmlspecialchars($comments['id']);?>&postid=<?php echo htmlspecialchars($comments['post_id']);?>">Designaler</a></li>
+                                        </ul>
                                     </div>
                                 
                             </div>
