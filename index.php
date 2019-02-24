@@ -84,11 +84,11 @@ if(isset($_GET['action']))
 	{
 		if(isset($_POST['online']))
 		{
-			addPost(addslashes($_POST['title']), addslashes($_POST['content']),addslashes($_POST['chapitre']), addslashes($_POST['online']));
+			addPost($_POST['title'], $_POST['content'],$_POST['chapitre'],$_POST['online']);
 		}
 		else
 		{
-			addPost(addslashes($_POST['title']), addslashes($_POST['content']),addslashes($_POST['chapitre']), 0);
+			addPost($_POST['title'], $_POST['content'],$_POST['chapitre'], 0);
 		}
 
 
