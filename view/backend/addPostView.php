@@ -31,7 +31,7 @@ ob_start(); ?>
 
 					<div class="form-group row list-inline">
 						<label for="fichier_a_uploader" class="col-form-label list-inline-item" title="Recherchez le fichier à uploader !">Ajouter une photo :</label>
-						<input type="hidden" name="MAX_FILE_SIZE" value="10000"  />
+						<input type="hidden" name="MAX_FILE_SIZE" value="100000"  />
             			<input name="image" type="file" id="image_uploade" class="form-control list-inline-item"/>
 					</div>
 

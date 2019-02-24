@@ -18,7 +18,7 @@ ob_start();
 	<div class="container">
 		<div class="row">
 		<div class="col-lg-12">	
-		<form action="index.php?action=updatePost&id=<?php echo $post['id']; ?>" method="POST">
+		<form enctype="multipart/form-data" action="index.php?action=updatePost&id=<?php echo $post['id']; ?>" method="POST">
 			<div class="form-group row">
 				<label for = "title" class="col-form-label">Titre du billet : </label>
 				<input type="text" name="title" class="form-control" value="<?php echo htmlspecialchars($post['title']) ; ?>">
@@ -31,6 +31,16 @@ ob_start();
 				<label for="content" class="col-form-label"> Billet : </label>
 				<textarea class="form-control" for="content" name="content" rows="20"><?php echo htmlspecialchars($post['content']); ?></textarea>
 			</div>
+			<div class="form-group row">
+				<?php if($post['pictures']){ $pictures = $post['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
+				<p class="col-form-label">Image du billet :  </p>
+				<p><img src="/projet3/public/images/upload/<?php echo $pictures; ?>"></p>
+			</div>
+			<div class="form-group row">
+				<label for="pict" class="col-form-label"> Modifier l'image : </label>
+				<input type="hidden" name="MAX_FILE_SIZE" value="1000000"  />
+            	<input name="image" type="file" id="image_uploade" class="form-control list-inline-item" />
+            </div>	
 			<input type="submit" name="update" value="Modifier">
 		</form>
 		</div>
