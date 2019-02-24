@@ -10,15 +10,17 @@ class PostManager extends Manager
 	public function getPosts()
 	{
 		$db = $this-> dbConnect();
-		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr,DATE_FORMAT(modification_date,\'%d/%m/%Y à %Hh%imin%ss\') AS modification_date_fr, online, chapitre FROM posts ORDER BY chapitre ');
+		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr,DATE_FORMAT(modification_date,\'%d/%m/%Y à %Hh%imin%ss\') AS modification_date_fr, online, chapitre, pictures FROM posts ORDER BY chapitre ');
 		return $req;
 	}
+
+
 
 	//Appel d'un billet avec l'id en argument 
 	public function getPost($postId)
 	{
 		$db = $this-> dbConnect();
-		$req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date,\'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr, DATE_FORMAT(modification_date,\'%d/%m/%Y à %Hh%imin%ss\') AS modification_date_fr, chapitre FROM posts WHERE id= ?');
+		$req = $db->prepare('SELECT id, title, content, DATE_FORMAT(creation_date,\'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr, DATE_FORMAT(modification_date,\'%d/%m/%Y à %Hh%imin%ss\') AS modification_date_fr, chapitre, pictures FROM posts WHERE id= ?');
 		$req->execute(array($postId));
 		$post = $req->fetch();
 
@@ -26,11 +28,11 @@ class PostManager extends Manager
 	}
 
 	//Modification d'un billet
-	public function updatePost($id, $title, $content,$chapitre)
+	public function updatePost($id, $title, $content,$chapitre,$pictures)
 	{
 		$db = $this-> dbConnect();
-		$req = $db->prepare('UPDATE posts SET title = ?, content = ?,chapitre=?, modification_date = NOW() WHERE id = ? ');
-		$req->execute(array($title, $content,$chapitre, $id));
+		$req = $db->prepare('UPDATE posts SET title = ?, content = ?,chapitre=?, modification_date = NOW(), pictures=? WHERE id = ? ');
+		$req->execute(array($title, $content,$chapitre, $pictures, $id));
 	}
 
 	public function postOnline($online, $id)
