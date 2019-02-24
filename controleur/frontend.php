@@ -35,8 +35,22 @@ function editPost($postId)
 
 function updatePost($id, $title, $content,$chapitre)
 {
+	
+	if($_FILES)
+	{
+		$addPict = new openclassrooms\blog\model\postManager();
+		$upload = $addPict->uploadPicture();
+		
+		$PostManager = new openclassrooms\blog\model\postManager();
+		$updateComment = $PostManager->updatePost($id, $title, $content, $chapitre, $upload);
+	}
+	else
+	{
+
+	$upload = 'defaut.jpg';	
 	$PostManager = new openclassrooms\blog\model\postManager();
-	$updateComment = $PostManager->updatePost($id, $title, $content, $chapitre);
+	$updateComment = $PostManager->updatePost($id, $title, $content, $chapitre, $upload);
+	}
 
 	if($updateComment === false)
 	{
