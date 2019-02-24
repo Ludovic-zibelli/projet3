@@ -19,18 +19,27 @@
             <main class="container">
                 <div class="row">
                     <div class="col-md-12 blog-main">
-
-                                <div class="blog-post">
-                                <strong><h1 class="blog-post-title text-center"><?php echo ($data['title']); ?></h1></strong>
+                        <div class="blog-post">
+                            <strong><h1 class="blog-post-title text-center"><?php echo ($data['title']); ?></h1></strong>
                                 <h4 class="blog-post-title">Chapitre : <?php echo ($data['chapitre']); ?></h4>
                                 <p class="blog-post-meta">le <?php echo $data['creation_date_fr']; ?></p>
-                                <blockquote><?php echo substr($data['content'], 0, 245).'...'; ?><a href="index.php?action=post&id=<?php echo $data['id']; ?>">Lire la suite</a></blockquote>
-                                <em><a class="btn btn-success" href="index.php?action=post&id=<?php echo $data['id']; ?>">Commentaires  <span class="badge badge-light"><?php echo ($nbr_comments); ?></span></a></em>
-                            <hr>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10"> 
+                                            <blockquote><?php echo substr($data['content'], 0, 245).'...'; ?><a href="index.php?action=post&id=<?php echo $data['id']; ?>">Lire la suite</a></blockquote>
+                                            <em><a class="btn btn-success" href="index.php?action=post&id=<?php echo $data['id']; ?>">Commentaires  <span class="badge badge-light"><?php echo ($nbr_comments); ?></span></a></em>
+                                        </div>
+                                    <div class="col-lg-2">
+                                        <?php if($data['pictures']){ $pictures = $data['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
+                                        <img class="img_blog" src="/projet3/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
+                                </div>
                             </div>
                         </div>
                     </div>
-                </main>
+                            <hr>
+                </div>
+            </div>       
+            </main>
             <?php
 
             }

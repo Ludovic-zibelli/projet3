@@ -89,9 +89,19 @@ ob_start(); ?>
                                 </div>
                             </div>
                             <div class="card-body">
-                            <h3 class="card-title">Chapitre : <?php echo ($data['chapitre']); ?></h3>
-                            <p class="card-text"><?php echo nl2br($data['content']);?> </p>
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <h3 class="card-title">Chapitre : <?php echo ($data['chapitre']); ?></h3>
+                                            <p class="card-text"><?php echo nl2br($data['content']);?> </p>
+                                        </div>
+                                        <div class="col-lg-2">
+                                            <img src="/projet3/public/images/upload/<?php echo $data['pictures']; ?>">
+                                        </div>
+                                    </div>
+                                </div>
 	                	</div>
+
                         <div class="card-footer text-center">Billet mise en ligne le le <?php echo $data['creation_date_fr']; ?>. | Dernier modification le <?php echo ($data['modification_date_fr']); ?>. | Le billet est <i class="fas fa-eye-slash"> Hors-ligne</i>.</div>
                     </div>
 	            </div>
@@ -133,8 +143,18 @@ ob_start(); ?>
                                 </div>
                             </div>
                             <div class="card-body">
-                            <h3 class="card-title">Chapitre : <?php echo ($data['chapitre']); ?></h3>
-                            <p class="card-text"><?php echo nl2br($data['content']);?> </p>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-10">
+                                            <h3 class="card-title">Chapitre : <?php echo ($data['chapitre']); ?></h3>
+                                            <p class="card-text"><?php echo nl2br($data['content']);?> </p>
+                                        </div>
+                                        <?php if($data['pictures']){ $pictures = $data['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
+                                        <div class="col-lg-2">
+                                            <img src="/projet3/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                         <div class="card-footer text-center">Billet mise en ligne le <?php echo $data['creation_date_fr']; ?>. | Dernier modification le <?php echo($data['modification_date_fr']); ?>. | Le billet est <i class="fas fa-eye"> En ligne</i>.</div>
                     </div>

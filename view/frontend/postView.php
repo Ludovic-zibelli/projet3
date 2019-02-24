@@ -11,10 +11,20 @@
 		<div class="row">
 			<div class="blog-main col-md-12">
 				<div class="blog-post">
-				<h3 class="blog-post-title">Chapitre: <?php echo htmlspecialchars($post['chapitre']); ?></h3>
-				<p class="blog-post-meta">Publier le <?php echo htmlspecialchars($post['creation_date_fr']); ?></p>
-				<blockquote><?php echo nl2br(htmlspecialchars($post['content'])); ?></blockquote>
+				<h3 class="blog-post-title">Chapitre: <?php echo $post['chapitre']; ?></h3>
+				<p class="blog-post-meta">Publier le <?php echo $post['creation_date_fr']; ?></p>
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10">
+							<blockquote><?php echo nl2br($post['content']); ?></blockquote>
+						</div>
+						<div class="col-lg-2">
+							<?php if($post['pictures']){ $pictures = $post['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
+							<img src="/projet3/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
+						</div>	
+					</div>
 				</div>
+			 </div>
 				<hr>
 			</div>
 		</div>
@@ -22,7 +32,7 @@
 <?php $title = $post['title']; ?>
 <?php $h_1 = $post['title']; ?>
 
-<div class="container-fluid">
+<div class="container">
 	<h2 class="blog-post-title">Commentaire du billet <?php echo htmlspecialchars($post['title']); ?> du chapitre <?php echo htmlspecialchars($post['chapitre']); ?></h2>
 	<div class="row">
 		
