@@ -3,6 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <title><?= $title ?></title>
+
+        <meta name="description" content="Blog du dernier ouvrage de Jean Forteroche qui n'est pas encore écrie... mais il sera publié sur ce site !" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="<?= $title ?>" />
+        <meta property="og:url" content="https://www.pierrefay.fr/premier-sur-google/mettre-en-place-donnees-structurees-site.html" />
+        <meta property="og:site_name" content="Billet simple pour l'Alaska" />
+        <meta property="og:description" content="Blog du dernier ouvrage de Jean Forteroche qui n'est pas encore écrie... mais il sera publié sur ce site !" />
+        
         <link href="/projet3/public/css/bootstrap.min.css" rel="stylesheet">
         <link href="/projet3/public/css/style.css" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
