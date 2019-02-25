@@ -82,14 +82,16 @@ if(isset($_GET['action']))
 
 	elseif ($_GET['action'] == 'addPost')
 	{
-		if(isset($_POST['online']))
-		{
-			addPost($_POST['title'], $_POST['content'],$_POST['chapitre'],$_POST['online']);
-		}
-		else
-		{
-			addPost($_POST['title'], $_POST['content'],$_POST['chapitre'], 0);
-		}
+		
+			if(isset($_POST['online']))
+			{
+				addPost($_POST['title'], $_POST['content'],$_POST['chapitre'],$_POST['online']);
+			}
+			else
+			{
+				addPost($_POST['title'], $_POST['content'],$_POST['chapitre'], 0);
+			}
+
 
 
 	}
