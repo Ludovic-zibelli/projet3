@@ -14,6 +14,7 @@ class commentManager extends Manager
 		return $comments; 
 	} 
 
+
 	public function getCommentSignal()
 	{
 		$db = $this-> dbConnect();
