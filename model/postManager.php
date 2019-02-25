@@ -35,6 +35,13 @@ class PostManager extends Manager
 		$req->execute(array($title, $content,$chapitre, $pictures, $id));
 	}
 
+	public function updatePostPict($id, $title, $content,$chapitre)
+	{
+		$db = $this-> dbConnect();
+		$req = $db->prepare('UPDATE posts SET title = ?, content = ?,chapitre=?, modification_date = NOW() WHERE id = ? ');
+		$req->execute(array($title, $content,$chapitre,$id));
+	}
+
 	public function postOnline($online, $id)
 	{
 		$db = $this-> dbConnect();
@@ -67,6 +74,7 @@ class PostManager extends Manager
 
 
 			$maxsize = 100000;
+
 			$image = $_FILES['image']['name'];
 			$extensions_valides = array( 'jpg' , 'jpeg' , 'gif' , 'png' );
 			//1. strrchr renvoie l'extension avec le point (« . »).
