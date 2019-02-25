@@ -36,7 +36,7 @@ function editPost($postId)
 function updatePost($id, $title, $content,$chapitre)
 {
 	
-	if($_FILES)
+	if(!empty($_FILES['image']['name']))
 	{
 		$addPict = new openclassrooms\blog\model\postManager();
 		$upload = $addPict->uploadPicture();
@@ -47,9 +47,8 @@ function updatePost($id, $title, $content,$chapitre)
 	else
 	{
 
-	$upload = 'defaut.jpg';	
-	$PostManager = new openclassrooms\blog\model\postManager();
-	$updateComment = $PostManager->updatePost($id, $title, $content, $chapitre, $upload);
+		$PostManager = new openclassrooms\blog\model\postManager();
+		$updateComment = $PostManager->updatePostPict($id, $title, $content, $chapitre);
 	}
 
 	if($updateComment === false)
@@ -79,14 +78,24 @@ function delPost($id)
 	}
 }
 
-function addPost($title, $content,$chapitre,$online)
+function addPost($title,$content,$chapitre,$online)
 {
 
-	$addPict = new openclassrooms\blog\model\postManager();
-	$upload = $addPict->uploadPicture();
+	if(!empty($_FILES['image']['name']))
+	{
+		$addPict = new openclassrooms\blog\model\postManager();
+		$upload = $addPict->uploadPicture();
 
-	$addPost = new openclassrooms\blog\model\postManager();
-	$add = $addPost->addPost($title,$content,$chapitre,$online,$upload);
+		$addPost = new openclassrooms\blog\model\postManager();
+		$add = $addPost->addPost($title,$content,$chapitre,$online,$upload);
+	}
+	else
+	{
+		$upload_1 = 'defaut.jpg';	
+		$addPost = new openclassrooms\blog\model\postManager();
+		$add = $addPost->addPost($title,$content,$chapitre,$online,$upload_1);
+
+	}
 
 	if($add === false)
 	{
@@ -226,6 +235,8 @@ function connexion($pseudo, $pass)
 
 	$userManager = new openclassrooms\blog\model\userManager();
 	$user = $userManager->getUser($pseudo);
+	$signalStatus = new \openclassrooms\blog\model\commentManager();
+	$signaler = $signalStatus->getCommentSignal();
 
 	if($user)
 	{
@@ -239,6 +250,7 @@ function connexion($pseudo, $pass)
 	        
 	        $PostManager = new \openclassrooms\blog\model\postManager();
 			$posts = $PostManager->getPosts();
+
 			require('view/backend/viewAdmin.php');
 	        
 	   		//setcookie('pseudo', $user['pseudo'] , time() + 365*24*3600, null, null, false, true);
