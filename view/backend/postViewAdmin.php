@@ -38,7 +38,7 @@ ob_start();
 			</div>
 			<div class="form-group row">
 				<label for="pict" class="col-form-label"> Modifier l'image : </label>
-				<input type="hidden" name="MAX_FILE_SIZE" value="1000000"  />
+				<input type="hidden" name="MAX_FILE_SIZE" value="100000000"  />
             	<input name="image" type="file" id="image_uploade" class="form-control list-inline-item" />
             </div>	
 			<input type="submit" name="update" value="Modifier">
