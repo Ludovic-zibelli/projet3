@@ -158,6 +158,17 @@ if(isset($_GET['action']))
 
 		
 	}
+
+	elseif ($_GET['action'] == 'recup') 
+	{
+		if(isset($_POST['recup_mail'],$_POST['recup_submit']))
+		{
+			if(!empty($_POST['recup_mail']))
+			{
+				recupMail();
+			}
+		}
+	}
 	elseif ($_GET['action'] == 'online')
 	{
 
