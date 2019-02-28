@@ -3,7 +3,7 @@
 require_once('model/postManager.php');
 require_once('model/commentManager.php');
 require_once('model/userManager.php');
-
+session_start();
 
 //Function Post
 function listPost()
@@ -304,7 +304,7 @@ function recupMail()
 
 			}
 				 $header="MIME-Version: 1.0\r\n";
-		         $header.='From:"PrimFX.com"<support@primfx.com>'."\n";
+		         $header.='From:"Blog de Jean Forteroche"<projet3@ludoviczibelli.fr>'."\n";
 		         $header.='Content-Type:text/html; charset="utf-8"'."\n";
 		         $header.='Content-Transfer-Encoding: 8bit';
 		         $message = '
@@ -322,7 +322,7 @@ function recupMail()
 		                     
 		                     <div align="center">Bonjour <b>'.$pseudo.'</b>,</div>
 		                     Voici votre code de récupération: <b>'.$recup_code.'</b>
-		                     A bientôt sur <a href="http://projet3.zibelliludovic.fr">Le blog </a> !
+		                     A bientôt sur <a href="http://projet3.ludoviczibelli.fr">Le blog </a> !
 		                     
 		                   </td>
 		                 </tr>
@@ -339,7 +339,10 @@ function recupMail()
 		         </body>
 		         </html>
 		         ';
-		         mail($recup_mail, "Récupération de mot de passe - PrimFX.com", $message, $header);
+		         mail($recup_mail, "Récupération de mot de passe", $message, $header);
+		          $msg ="E-Mail envoyer";
+		         header('Location:view/frontend/recuperation.php?section=code');
+		        
 		}
 		else
 		{
@@ -350,9 +353,27 @@ function recupMail()
 	{
 		$error = "Veuillez entrer votre mail";
 	}
+
 }
 
+function verifCode()
+{
+	$mail_recup = $_SESSION['mail_recup'];
+	$verif_codeB = htmlspecialchars($_POST['verif_code']);
+	$verif_code = new \openclassrooms\blog\model\userManager();
+	$control_code = $verif_code->verifCode($mail_recup,$verif_codeB);
 
+	if($control_code == 1)
+	{
+		$up_req = new \openclassrooms\blog\model\userManager();
+		$upreq = $up_req->confirmCode($_SESSION['mail_recup']);
+		 header('Location: view/frontend/recuperation.php?section=changmdp');
+	}
+	else
+	{
+		$error = "Code invalide";
+	}
+}
 
 
 
