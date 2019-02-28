@@ -61,4 +61,22 @@ class userManager extends Manager
 		return $return_inser;
 
 	}
+
+	public function verifCode($mail,$code)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('SELECT id FROM recuperation WHERE mail = ? AND code = ?');
+		$req->execute(array($mail,$code));
+		$code = $req->rowCount();
+
+		return $code;
+	}
+
+	public function confirmCode($mail)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE recuperation SET confirmation = 1 WHERE mail = ?');
+		$req->execute(array($mail));
+		
+	}
 }
