@@ -169,6 +169,16 @@ if(isset($_GET['action']))
 			}
 		}
 	}
+
+	elseif ($_GET['action'] == 'code')
+	{
+		if(isset($_POST['verif_code']))
+		{
+			verifCode();
+
+		}
+	}
+
 	elseif ($_GET['action'] == 'online')
 	{
 
