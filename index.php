@@ -179,6 +179,21 @@ if(isset($_GET['action']))
 		}
 	}
 
+	elseif ($_GET['action'] == 'changmdp') 
+	{
+		if(isset($_POST['pass_1'],$_POST['pass_2']))
+		{
+			if($_POST['pass_1'] == $_POST['pass_2'])
+			{
+				changMdp();
+			}
+			else
+			{
+				$error = "Les deux mot de passe ne sont pas identique !";
+			}
+		}
+	}
+
 	elseif ($_GET['action'] == 'online')
 	{
 
