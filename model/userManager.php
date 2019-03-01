@@ -72,11 +72,11 @@ class userManager extends Manager
 		return $code;
 	}
 
-	public function confirmCode($mail)
+	public function delCode($mail)
 	{
 		$db = $this->dbConnect();
-		$req = $db->prepare('UPDATE recuperation SET confirmation = 1 WHERE mail = ?');
+		$req = $db->prepare('DELETE FROM recuperation WHERE mail = ?');
 		$req->execute(array($mail));
-		
+
 	}
 }
