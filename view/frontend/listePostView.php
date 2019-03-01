@@ -1,4 +1,4 @@
-<?php $title='Mon blog' ?>
+<?php $title='Blog de Jean Forteroche - Billet simple pour l\'Alaska' ?>
 <?php $h_1='' ?>
 
 <?php ob_start(); ?>
@@ -31,12 +31,12 @@
                                         </div>
                                     <div class="col-lg-2">
                                         <?php if($data['pictures']){ $pictures = $data['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
-                                        <img class="img_blog" src="/projet3/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
+                                        <img class="img_blog" src="/projet3/public/images/upload/<?php echo $pictures; ?>" alt="<?php echo $data['title']; ?>">
                                 </div>
                             </div>
                         </div>
                     </div>
-                            <hr>
+                    <hr>
                 </div>
             </div>       
             </main>
