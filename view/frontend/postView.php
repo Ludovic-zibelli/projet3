@@ -29,7 +29,7 @@
 			</div>
 		</div>
 	</div>	
-<?php $title = $post['title']; ?>
+<?php $title = $post['title'].'-Billet simple pour l\'Alaska '; ?>
 <?php $h_1 = $post['title']; ?>
 
 <div class="container">
