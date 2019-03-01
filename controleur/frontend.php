@@ -3,7 +3,7 @@
 require_once('model/postManager.php');
 require_once('model/commentManager.php');
 require_once('model/userManager.php');
-session_start();
+//session_start();
 
 //Function Post
 function listPost()
@@ -275,6 +275,7 @@ function connexion($pseudo, $pass)
 
 function recupMail()
 {
+	session_start();
 	$recup_mail = htmlspecialchars($_POST['recup_mail']);
 	if(filter_var($recup_mail,FILTER_VALIDATE_EMAIL))
 	{
@@ -340,24 +341,27 @@ function recupMail()
 		         </html>
 		         ';
 		         mail($recup_mail, "Récupération de mot de passe", $message, $header);
-		          $msg ="E-Mail envoyer";
+		         //$msg ="E-Mail envoyer";
 		         header('Location:view/frontend/recuperation.php?section=code');
 		        
 		}
 		else
 		{
-			$error = "Adresse mail invalide";
+			$error = 'Adresse mail invalide';
+			header('Location:view/frontend/recuperation.php?error=Adresse mail invalide');
 		}
 	}
 	else
 	{
 		$error = "Veuillez entrer votre mail";
+		header('Location:view/frontend/recuperation.php');
 	}
 
 }
 
 function verifCode()
 {
+	session_start();
 	$mail_recup = $_SESSION['mail_recup'];
 	$verif_codeB = htmlspecialchars($_POST['verif_code']);
 	$verif_code = new \openclassrooms\blog\model\userManager();
@@ -366,12 +370,13 @@ function verifCode()
 	if($control_code == 1)
 	{
 		$up_req = new \openclassrooms\blog\model\userManager();
-		$upreq = $up_req->confirmCode($_SESSION['mail_recup']);
+		$upreq = $up_req->delCode($_SESSION['mail_recup']);
 		 header('Location: view/frontend/recuperation.php?section=changmdp');
 	}
 	else
 	{
 		$error = "Code invalide";
+		header('Location:view/frontend/recuperation.php');
 	}
 }
 
