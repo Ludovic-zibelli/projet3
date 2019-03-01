@@ -26,7 +26,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 							<label for="pass" class="col-form-label list-inline-item">Mot de passe : </label>
 							<input type="password" name="pass" class="form-control" placeholder="Mot de passe"><br>
 							<input type="submit" name="connexion" value="Connexion" class="btn btn-lg btn-primary btn-block">
-							<a class="col-form-label list-inline-item" href="">Mot de passe oublier ?</a>
+							<a class="col-form-label list-inline-item" href="/projet3/view/frontend/recuperation.php">Mot de passe oublier ?</a>
 							</fieldset>
 				</form>
 				
