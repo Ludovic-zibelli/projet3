@@ -48,6 +48,7 @@ class commentManager extends Manager
 		return $req;
 	}
 
+	//Supression d'un commentaitre
 	public function delComment($id)
 	{
 		$db = $this->dbConnect();
@@ -57,6 +58,7 @@ class commentManager extends Manager
 
 	}
 
+	//Changement de l'etat du signalment des commentaire 
 	public function signalComment($id,$sing)
 	{
 		$db = $this->dbConnect();
@@ -65,6 +67,7 @@ class commentManager extends Manager
 		return $req;
 	}
 
+	//Recherche des commentaire signaler 
 	public function signalStatus($post_id)
 	{
 		$db = $this->dbConnect();
