@@ -8,7 +8,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 }
 else
 {
-    header('location: /projet3/index.php');
+    header('location: /index.php');
 }
 $title='Ajouter un billet'; 
 $h_1='Ajouter un billet'; 
@@ -19,7 +19,7 @@ ob_start(); ?>
 	<div class="container">
 		<div class="row">
 				<div class="col-lg-0"></div>
-				<form enctype="multipart/form-data" action="/projet3/index.php?action=addPost" method="POST" class="form-horizontal col-lg-12">
+				<form enctype="multipart/form-data" action="/index.php?action=addPost" method="POST" class="form-horizontal col-lg-12">
 					<div class="form-group row list-inline">
 						<label for="title" class="col-form-label list-inline-item">Titre : </label>
 						<input type="text" name="title" class="form-control list-inline-item">
@@ -30,7 +30,7 @@ ob_start(); ?>
 					</div>
 
 					<div class="form-group row list-inline">
-						<label for="fichier_a_uploader" class="col-form-label list-inline-item" title="Recherchez le fichier à uploader !">Ajouter une photo :</label>
+						<label for="fichier_a_uploader" class="col-form-label list-inline-item" title="Recherchez le fichier à uploader !">Ajouter une photo(1Mo Max) :</label>
 						<input type="hidden" name="MAX_FILE_SIZE" value="10000000"  />
             			<input name="image" type="file" id="image_uploade" class="form-control list-inline-item"/>
 					</div>

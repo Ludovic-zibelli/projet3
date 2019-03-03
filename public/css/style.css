@@ -16,9 +16,9 @@ table
 
 .user
 {
-	margin-top: 100px;
+	margin-top: 50px;
 	padding-top: 10px;
-	padding-bottom: 10px;  
+	padding-bottom: 100px;  
 }
 
 .form-signin
@@ -50,8 +50,8 @@ table
 
 header
 {
-	background-image:url(/projet3/public/images/original_ALASKA_banner.jpg);
-	margin-top:10px;
+	background-image:url(/public/images/original_ALASKA_banner.jpg);
+	margin-bottom: 0px;
 
 
 }
@@ -59,7 +59,7 @@ header
 body
 {
 	background-color: #E8DDDB;
-	margin-top: 30px;
+	margin-top: 0px;
 
 
 }
@@ -87,3 +87,7 @@ img
 	height: 100px;
 }
 
+.nav_site
+{
+	margin-bottom: 30px;
+}

@@ -10,7 +10,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 else
 {
     
-    $statu = '<a class="" href="view/frontend/userView.php">Connexion</a>';
+    $statu = '<a class="" href="/view/frontend/userView.php">Connexion</a>';
 }
 ?>
 
@@ -23,14 +23,14 @@ else
         <meta name="description" content="Blog du dernier ouvrage de Jean Forteroche qui n'est pas encore écrie... mais il sera publié sur ce site !" />
         <meta property="og:type" content="article" />
         <meta property="og:title" content="<?= $title ?>" />
-        <meta property="og:url" content="https://www.pierrefay.fr/premier-sur-google/mettre-en-place-donnees-structurees-site.html" />
+        <meta property="og:url" content="https://projet3.ludoviczibelli.fr" />
         <meta property="og:site_name" content="Billet simple pour l'Alaska" />
         <meta property="og:description" content="Blog du dernier ouvrage de Jean Forteroche qui n'est pas encore écrie... mais il sera publié sur ce site !" />
 
-        <link href="/projet3/public/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/projet3/public/css/style.css" rel="stylesheet" /> 
+        <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/public/css/style.css" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <script type="text/javascript" src="/projet3/public/js/ckeditor/ckeditor.js"></script>
+        <script type="text/javascript" src="/public/js/ckeditor/ckeditor.js"></script>
     </head>
     <header class="blog-header py-3 text-center container-fluid">
         <div class="row">
@@ -44,22 +44,23 @@ else
     </header>
 
 
-    <div class="navbar navbar-inverse">
-        <div class="container-fluid navbar-expand-lg navbar-light bg-light border">
+    <nav class="nav_site navbar navbar-inverse nav_site bg-light">
+        <div class="container-fluid navbar-expand-lg navbar-light bg-light">
         
         <div class="navbar-header">
             <a href="#" class="navbar-brand"><h3><?= $h_1 ?></h3></a>
         </div>
         <ul class=" nav nav-bar lien">
-            <li class="active"><a class="navbar-brand" href="/projet3/index.php"><i class="fas fa-home"> Accueil</i></a></li>
+            <li class="active"><a class="navbar-brand" href="/index.php"><i class="fas fa-home"> Accueil</i></a></li>
             <li></li>
         </ul>
 
         
         </div>
-    </div>
+    </nav>
 
-    <body class="">
+    <body>
+
         <?= $content ?>
     </body>
 
@@ -81,9 +82,9 @@ else
                         </div>
                         <div class="row reseau">
                             <div class="col-lg-3"></div>
-                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/facebook.png"></a></div>
-                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/twitter.png"></a></div>
-                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/Snapchat.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/public/images/facebook.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/public/images/twitter.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/public/images/Snapchat.png"></a></div>
                         </div> 
                </div>
     		</div>

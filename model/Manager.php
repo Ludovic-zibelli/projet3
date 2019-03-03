@@ -6,7 +6,7 @@ class Manager
 {
 	protected function dbConnect()
 	{
-		$db = new \PDO ('mysql:host=localhost;dbname=projet_3;charset=utf8', 'root', '');
+		$db = new \PDO ('mysql:host=db775665650.hosting-data.io;dbname=db775665650;charset=utf8', 'dbo775665650', 'Projet3%');
 		return $db;
 	}
 }

@@ -20,7 +20,7 @@
 						</div>
 						<div class="col-lg-2">
 							<?php if($post['pictures']){ $pictures = $post['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
-							<img src="/projet3/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
+							<img src="/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
 						</div>	
 					</div>
 				</div>

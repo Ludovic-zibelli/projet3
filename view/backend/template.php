@@ -11,10 +11,10 @@
         <meta property="og:site_name" content="Billet simple pour l'Alaska" />
         <meta property="og:description" content="Blog du dernier ouvrage de Jean Forteroche qui n'est pas encore écrie... mais il sera publié sur ce site !" />
 
-        <link href="/projet3/public/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/projet3/public/css/style.css" rel="stylesheet" /> 
+        <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/public/css/style.css" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-        <script type="text/javascript" src="/projet3/public/js/tiny_mce/tiny_mce.js"></script>
+        <script type="text/javascript" src="/public/js/tiny_mce/tiny_mce.js"></script>
         
         <script>
           tinymce.init({
@@ -40,14 +40,14 @@
         
   
 
-    <div class="navbar navbar-default">
-        <div class="container-fluid navbar-expand-lg navbar-light bg-light border">
+    <div class="navbar navbar-inverse nav_site bg-light">
+        <div class="container-fluid navbar-expand-lg navbar-light bg-light">
         
         <div class="navbar-header">
             <a href="#" class="navbar-brand"><h3><?= $h_1 ?></h3></a>
         </div>
         <h3><ul class=" nav nav-bar lien">
-            <li class="active"><a class="navbar-brand" href="/projet3/index.php"><i class="fas fa-home"> Accueil</i></a></li>
+            <li class="active"><a class="navbar-brand" href="/index.php"><i class="fas fa-home"> Accueil</i></a></li>
             <li><a class="navbar-brand" href="view/backend/addPostView.php">Ajouter un billet</a></li>
             <li><a class="navbar-brand" href="view/backend/deconexion.php">Déconnexion</a></li>
         </ul></h3>
@@ -57,7 +57,8 @@
     </div>
 
     <body>
-        <div  class="text-center"><a class="nav-link" href="/projet3/index.php?action=online">Retour a l'accueil de l'admin</a></div>
+        <div  class="text-center"><a class="nav-link" href="/index.php?action=online">Retour a l'accueil de l'admin</a></div>
+        
         <?= $content ?>
     </body>
 
@@ -78,9 +79,9 @@
                         </div>
                         <div class="row reseau">
                             <div class="col-lg-3"></div>
-                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/facebook.png"></a></div>
-                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/twitter.png"></a></div>
-                            <div class="col-lg-2"><a href="#"><img src="/projet3/public/images/Snapchat.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/public/images/facebook.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/public/images/twitter.png"></a></div>
+                            <div class="col-lg-2"><a href="#"><img src="/public/images/Snapchat.png"></a></div>
                         </div> 
                </div>
             </div>

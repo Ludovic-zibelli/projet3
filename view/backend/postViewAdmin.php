@@ -7,7 +7,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 }
 else
 {
-    header('location: /projet3/index.php');
+    header('location: /index.php');
 }
  
 ob_start();
@@ -34,14 +34,16 @@ ob_start();
 			<div class="form-group row">
 				<?php if($post['pictures']){ $pictures = $post['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
 				<p class="col-form-label">Image du billet :  </p>
-				<p><img src="/projet3/public/images/upload/<?php echo $pictures; ?>"></p>
+				<p><img src="/public/images/upload/<?php echo $pictures; ?>"></p>
 			</div>
 			<div class="form-group row">
-				<label for="pict" class="col-form-label"> Modifier l'image : </label>
+				<label for="pict" class="col-form-label"> Modifier l'image(1Mo Max) : </label>
 				<input type="hidden" name="MAX_FILE_SIZE" value="100000000"  />
             	<input name="image" type="file" id="image_uploade" class="form-control list-inline-item" />
-            </div>	
-			<input type="submit" name="update" value="Modifier">
+            </div>
+            <div class="form-group row list-inline">	
+			<input type="submit" name="update" value="Modifier" class="btn btn-primary">
+			</div>
 		</form>
 		</div>
 		</div>

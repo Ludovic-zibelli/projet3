@@ -7,7 +7,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 }
 else
 {
-    header('location: /projet3/index.php');
+    header('location: /index.php');
 }
  
 ob_start();
@@ -35,7 +35,7 @@ ob_start();
                                     <div class="col-sm-8"></div>
                                     <div class="col-sm-4">
                                         <ul class="nav justify-content-end">
-                                        <li><a class ="nav-link btn btn-primary btn-sm" href="/projet3/index.php?action=delComment&id=<?php echo $comments['id']; ?>&postId=<?php echo $comments['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> Supprimer </a></li>
+                                        <li><a class ="nav-link btn btn-primary btn-sm" href="/index.php?action=delComment&id=<?php echo $comments['id']; ?>&postId=<?php echo $comments['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> Supprimer </a></li>
                                         <li><a class ="nav-link btn btn-primary btn-sm" href="index.php?action=signal&id=<?php echo htmlspecialchars($comments['id']);?>&postid=<?php echo htmlspecialchars($comments['post_id']);?>">Designaler</a></li>
                                         </ul>
                                     </div>

@@ -8,7 +8,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 }
 else
 {
-    header('location: /projet3/index.php');
+    header('location: /index.php');
 }
 $title='Gestion du blog'; 
 $h_1='Gestion du blog | ' . $welcom; 
@@ -34,8 +34,9 @@ ob_start(); ?>
                                     <div class="col-md-6 title_admin"><h4>Le commentaire de <?php echo $data_signal['author']; ?> a était signalé !</h4></div>
 
                                     <ul class="nav justify-content-end col-md-6">
-                                            <li class="nav-item"><a class ="nav-link btn btn-primary btn-sm" href="/projet3/index.php?action=delComment&id=<?php echo $data_signal['id']; ?>&postId=<?php echo $data_signal['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> Supprimer </a></li>
+                                            <li class="nav-item"><a class ="nav-link btn btn-primary btn-sm" href="/index.php?action=delComment&id=<?php echo $data_signal['id']; ?>&postId=<?php echo $data_signal['post_id'];?> "onclick="return confirm('Voulez-vous vraiment supprimer ce commentaire ?');"> Supprimer </a></li>
                                             <li class="nav-item"><a class ="nav-link btn btn-primary btn-sm" href="index.php?action=signal&id=<?php echo htmlspecialchars($data_signal['id']);?>&postid=<?php echo htmlspecialchars($data_signal['post_id']);?>">Designaler</a></li>
+                                            <li class="nav-item"><a class ="nav-link btn btn-primary btn-sm" href="index.php?action=post&id=<?php echo $data_signal['post_id']; ?>">Voir le billet</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -96,7 +97,7 @@ ob_start(); ?>
                                             <p class="card-text"><?php echo nl2br($data['content']);?> </p>
                                         </div>
                                         <div class="col-lg-2">
-                                            <img src="/projet3/public/images/upload/<?php echo $data['pictures']; ?>">
+                                            <img src="/public/images/upload/<?php echo $data['pictures']; ?>">
                                         </div>
                                     </div>
                                 </div>
@@ -151,7 +152,7 @@ ob_start(); ?>
                                         </div>
                                         <?php if($data['pictures']){ $pictures = $data['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
                                         <div class="col-lg-2">
-                                            <img src="/projet3/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
+                                            <img src="/public/images/upload/<?php echo $pictures; ?>" alt="Image billets">
                                         </div>
                                     </div>
                                 </div>
