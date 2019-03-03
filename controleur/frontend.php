@@ -259,14 +259,14 @@ function connexion($pseudo, $pass)
 		}
 		else
 		{
-			header('location: view/frontend/userView.php?message_erreur= Identifiant ou mot de passe incoreccte');
+			header('location: view/frontend/userView.php?error= Identifiant ou mot de passe incoreccte');
 		}
 	
 	}
 	else 
 	{
 		
-		header('location: view/frontend/userView.php?message_erreur= Identifiant ou mot de passe incoreccte');
+		header('location: view/frontend/userView.php?error= Identifiant ou mot de passe incoreccte');
 		
 		
 	}
@@ -341,26 +341,27 @@ function recupMail()
 		         </html>
 		         ';
 		         mail($recup_mail, "Récupération de mot de passe", $message, $header);
-		         //$msg ="E-Mail envoyer";
+		         $msg =$recup_mail;
 		         header('Location:view/frontend/recuperation.php?section=code');
 		        
 		}
 		else
 		{
-			$error = 'Adresse mail invalide';
+			
 			header('Location:view/frontend/recuperation.php?error=Adresse mail invalide');
 		}
 	}
 	else
 	{
-		$error = "Veuillez entrer votre mail";
-		header('Location:view/frontend/recuperation.php');
+		
+		header('Location:view/frontend/recuperation.php?error=Veuillez entrer votre mail');
 	}
 
 }
 
 function verifCode()
 {
+
 	session_start();
 	$mail_recup = $_SESSION['mail_recup'];
 	$verif_codeB = htmlspecialchars($_POST['verif_code']);
@@ -369,14 +370,41 @@ function verifCode()
 
 	if($control_code == 1)
 	{
+		setcookie('code', 1 , time() + 3600, null, null, false, true);
 		$up_req = new \openclassrooms\blog\model\userManager();
 		$upreq = $up_req->delCode($_SESSION['mail_recup']);
-		 header('Location: view/frontend/recuperation.php?section=changmdp');
+		header('Location: view/frontend/recuperation.php?section=changmdp');
 	}
 	else
 	{
-		$error = "Code invalide";
-		header('Location:view/frontend/recuperation.php');
+		
+		header('Location:view/frontend/recuperation.php?error=Code invalide');
+	}
+}
+
+function chgMdp()
+{
+	session_start();
+	$mail_recup = $_SESSION['mail_recup'];
+	$code = $_COOKIE["code"];
+	if($code == 1)
+	{
+		setcookie('code', 0 , time() + 3600, null, null, false, true);
+		$pass_hach = password_hash($_POST['pass_1'], PASSWORD_DEFAULT);
+		$new_pass = new \openclassrooms\blog\model\userManager();
+		$new_pass_edit = $new_pass->updatPass($pass_hach,$mail_recup);
+		if($new_pass_edit == 1)
+		{
+			header('Location:view/frontend/userView.php?msg=Le mot de passe a etait changer avec succès');
+		}
+		else
+		{
+			header('Location:view/frontend/recuperation.php?error=Une erreur et survenu !');	
+		}
+	}
+	else
+	{
+		header('Location:view/frontend/recuperation.php?error=Vous ne pouvez pas accéder a cette page !');
 	}
 }
 

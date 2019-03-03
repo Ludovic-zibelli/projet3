@@ -79,4 +79,13 @@ class userManager extends Manager
 		$req->execute(array($mail));
 
 	}
+
+	public function updatPass($new_pass,$mail)
+	{
+		$db = $this->dbConnect();
+		$req = $db->prepare('UPDATE user SET password = ? WHERE email = ?');
+		$req->execute(array($new_pass,$mail));
+		$new_pass_ok = $req->rowCount();
+		return $new_pass_ok;
+	}
 }

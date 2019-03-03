@@ -185,11 +185,12 @@ if(isset($_GET['action']))
 		{
 			if($_POST['pass_1'] == $_POST['pass_2'])
 			{
-				changMdp();
+				chgMdp();
 			}
 			else
 			{
-				$error = "Les deux mot de passe ne sont pas identique !";
+				header('Location: view/frontend/recuperation.php?section=changmdp&error=Les deux mot de passe ne sont pas identique !');
+				
 			}
 		}
 	}
