@@ -1,0 +1,6 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+#RewriteRule	^foo.html$	/index.php	[L]	
+RewriteRule ^([0-9]+)-([0-9]+)-([0-9]+)\.html$  /index.php?action=signalComment&sign=$1&id=$2&postid=$3 [L]
+RewriteRule ^([0-9]+)\.html$ /index.php?action=post&id=$1 [L]
