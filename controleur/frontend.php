@@ -194,7 +194,7 @@ function signalComment($id, $sing, $postId)
 	}
 	else
 	{
-		header('Location: index.php?action=post&id='.$postId);
+		header('Location:'.$postId.'.html');
 	}
 }
 

@@ -53,7 +53,8 @@
 		    					<div class="container">
 		    						<div class="row">
 		    						<div class="col-sm-10"></div>
-		    					<small class="pull-right col-sm-2"><a class="btn btn-danger btn-sm" href="index.php?action=signalComment&sign=1&id=<?php echo htmlspecialchars($comments['id']);?>&postid=<?php echo htmlspecialchars($post['id']);?>"><i class="fas fa-exclamation-circle">  Signaler</i></a></small>
+		    					<small class="pull-right col-sm-2"><a class="btn btn-danger btn-sm" href="
+		    						/1-<?php echo htmlspecialchars($comments['id']);?>-<?php echo htmlspecialchars($post['id']);?>.html"><i class="fas fa-exclamation-circle">  Signaler</i></a></small>
     						</div>
     					</div>
   					</div>
