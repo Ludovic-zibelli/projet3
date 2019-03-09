@@ -22,7 +22,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 				<?php 
 					if(isset($_GET['section']) && $_GET['section'] == 'code'){
 						?>
-					<form action="/index.php?action=code" method="POST" class="form-signin col-lg-4" style="float: none;">
+					<form action="/code.html" method="POST" class="form-signin col-lg-4" style="float: none;">
 							<fieldset>
 							<label for="mail" class="col-form-label list-inline-item">Entrez le code que vous avez reçu par mail : </label>
 							<input type="text" name="verif_code" class="form-control" placeholder="Code de recuperation"><br />
@@ -39,7 +39,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 					
 					{
 					?>
-							<form action="/index.php?action=changmdp" method="POST" class="form-signin col-lg-4" style="float: none;">
+							<form action="/changmdp.html" method="POST" class="form-signin col-lg-4" style="float: none;">
 									<fieldset>
 									<label for="pass_1" class="col-form-label list-inline-item">Nouveau mot de passe : </label>
 									<input type="password" name="pass_1" class="form-control"><br />
@@ -54,7 +54,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 					else
 					{
 					?>	
-					<form action="/index.php?action=recup" method="POST" class="form-signin col-lg-4" style="float: none;">
+					<form action="/recup.html" method="POST" class="form-signin col-lg-4" style="float: none;">
 							<fieldset>
 							<label for="mail" class="col-form-label list-inline-item">Indiquez votre adresse Mail : </label>
 							<input type="email" name="recup_mail" class="form-control" placeholder="Indiquez votre mail"><br />

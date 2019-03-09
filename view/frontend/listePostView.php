@@ -20,8 +20,8 @@
                 <div class="row">
                     <div class="col-md-12 blog-main">
                         <div class="blog-post">
-                            <strong><h1 class="blog-post-title text-center"><?php echo ($data['title']); ?></h1></strong>
-                                <h4 class="blog-post-title">Chapitre : <?php echo ($data['chapitre']); ?></h4>
+                            <strong><h2 class="blog-post-title text-center"><?php echo ($data['title']); ?></h2></strong>
+                                <h3 class="blog-post-title">Chapitre : <?php echo ($data['chapitre']); ?></h3>
                                 <p class="blog-post-meta">le <?php echo $data['creation_date_fr']; ?></p>
                                 <div class="container">
                                     <div class="row">

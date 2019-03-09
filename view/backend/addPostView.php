@@ -19,7 +19,7 @@ ob_start(); ?>
 	<div class="container">
 		<div class="row">
 				<div class="col-lg-0"></div>
-				<form enctype="multipart/form-data" action="/index.php?action=addPost" method="POST" class="form-horizontal col-lg-12">
+				<form enctype="multipart/form-data" action="/addPost.html" method="POST" class="form-horizontal col-lg-12">
 					<div class="form-group row list-inline">
 						<label for="title" class="col-form-label list-inline-item">Titre : </label>
 						<input type="text" name="title" class="form-control list-inline-item">

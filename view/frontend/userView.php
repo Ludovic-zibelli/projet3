@@ -23,7 +23,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 				</div>
 				<div class="row">
 				<div class="col-lg-4"></div>
-				<form action="/index.php?action=connexion" method="POST" class="form-signin col-lg-4" style="float: none;">
+				<form action="/connexion.html" method="POST" class="form-signin col-lg-4" style="float: none;">
 							<fieldset>
 							<label for="user" class="col-form-label list-inline-item">Identifiant : </label>
 							<input type="text" name="user" class="form-control" placeholder="Identifiant">
