@@ -2,14 +2,14 @@
 
 try
 {
-	$bdd = new PDO('mysql:host=localhost;dbname=projet_3;charset=utf8', 'root', '');
+	$bdd = new PDO('mysql:host=db775665650.hosting-data.io;dbname=db775665650;charset=utf8', 'dbo775665650', 'Projet3%');
 }
 catch(Exception $e)
 {
         die('Erreur : '.$e->getMessage());
 }
 
-$pseudo ='admin';
+$pseudo ='marion';
 $req = $bdd->prepare('SELECT * FROM user WHERE pseudo = :pseudo');
 $req->execute(array(
 	'pseudo' => $pseudo ));
