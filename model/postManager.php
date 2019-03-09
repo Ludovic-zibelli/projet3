@@ -10,7 +10,7 @@ class PostManager extends Manager
 	public function getPosts()
 	{
 		$db = $this-> dbConnect();
-		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr,DATE_FORMAT(modification_date,\'%d/%m/%Y à %Hh%imin%ss\') AS modification_date_fr, online, chapitre, pictures FROM posts ORDER BY chapitre ');
+		$req = $db->query('SELECT id, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr,DATE_FORMAT(modification_date,\'%d/%m/%Y à %Hh%imin%ss\') AS modification_date_fr, online, chapitre, pictures FROM posts ORDER BY chapitre DESC');
 		return $req;
 	}
 
