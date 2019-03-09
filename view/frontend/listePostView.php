@@ -26,7 +26,7 @@
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-lg-10"> 
-                                            <blockquote><?php echo substr($data['content'], 0, 300).'...'; ?><a href="index.php?action=post&id=<?php echo $data['id']; ?>">Lire la suite</a></blockquote>
+                                            <blockquote><?php echo substr($data['content'], 0, 300).'...'; ?><a href="post-<?php echo $data['id']; ?>.html">Lire la suite</a></blockquote>
                                             <em><a class="btn btn-success" href="/<?php echo $data['id']; ?>.html">Commentaires  <span class="badge badge-light"><?php echo ($nbr_comments); ?></span></a></em>
                                         </div>
                                     <div class="col-lg-2">

@@ -33,7 +33,7 @@
 <?php $h_1 = $post['title']; ?>
 
 <div class="container">
-	<h3 class="blog-post-title">Commentaire du billet <?php echo htmlspecialchars($post['title']); ?> du chapitre <?php echo htmlspecialchars($post['chapitre']); ?></h3>
+	<h3 class="blog-post-title">Commentaire du billet <strong><?php echo htmlspecialchars($post['title']); ?></strong> du chapitre <?php echo htmlspecialchars($post['chapitre']); ?></h3>
 	<div class="row">
 		
 		<div class="col-lg-1"></div>
