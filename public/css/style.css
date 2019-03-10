@@ -91,3 +91,14 @@ img
 {
 	margin-bottom: 30px;
 }
+
+.titre
+{
+	text-decoration: none;
+	color: black;
+}
+
+.msg_error
+{
+	color: red;
+}

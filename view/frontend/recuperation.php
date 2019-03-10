@@ -13,7 +13,7 @@ if (isset($_SESSION['id']) AND isset($_SESSION['pseudo']))
 		<div class="container-fluid user">
 			<div class="row">
 				<div class=" col-lg-12 text-center">
-					<?php if(isset($_GET['msg'])){ echo $_GET['msg'] ; }?><?php if(isset($_GET['error'])){echo $_GET['error'];}  ?>
+					<?php if(isset($_GET['msg'])){ echo $_GET['msg'] ; }?><?php if(isset($_GET['error'])){echo '<strong class="msg_error">'.$_GET['error'].'</strong>';}  ?>
 						
 					</div>
 				</div>

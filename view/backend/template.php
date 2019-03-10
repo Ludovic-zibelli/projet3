@@ -30,7 +30,7 @@
 <header class="blog-header py-3 text-center container-fluid">
         <div class="row">
         <div class="col-lg-3"></div>
-        <div class="col-lg-6"><h1>Billet simple pour l'Alaska</h1>
+        <div class="col-lg-6"><a href="/index.php" class="navbar-brand titre"><h1>Billet simple pour l'Alaska</h1></a>
         <p class="title_blog">Blog de Jean Forteroche</p>
         </div>
         <div class="col-lg-3"></div>
@@ -68,14 +68,14 @@
                <div class="col-lg-4">
                     <ul class="nav flex-column text-align">
                         <li class="nav-item"><a href="#">Contact</a></li>
-                        <li class="nav-item"><a href="#">Mention legals</a></li>  
+                        <li class="nav-item"><a href="#">Mentions légales</a></li>  
                     </ul> 
                </div>
                <div class="col-lg-4"><h4 class="text-center copyright"><i class="far fa-copyright"> Copyright Jean Forteroche 2019</i></h4></div>
                <div class="col-lg-4">
                     <div class="container  text-center">
                         <div class="row">
-                            <h4 class="col-lg-12">Reseau sociaux</h4></br>
+                            <h4 class="col-lg-12">Réseaux sociaux</h4></br>
                         </div>
                         <div class="row reseau">
                             <div class="col-lg-3"></div>

@@ -31,7 +31,7 @@
                                         </div>
                                     <div class="col-lg-2">
                                         <?php if($data['pictures']){ $pictures = $data['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
-                                        <img class="img_blog" src="/public/images/upload/<?php echo $pictures; ?>" alt="<?php echo $data['title']; ?>">
+                                        <a href="/public/images/upload/<?php echo $pictures; ?>"><img class="img_blog" src="/public/images/upload/<?php echo $pictures; ?>" alt="<?php echo $data['title']; ?>" class="img-thumbnail"></a>
                                 </div>
                             </div>
                         </div>

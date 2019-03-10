@@ -20,7 +20,7 @@
 						</div>
 						<div class="col-lg-2">
 							<?php if($post['pictures']){ $pictures = $post['pictures']; }else{ $pictures = 'defaut.jpg'; } ?>
-							<img src="/public/images/upload/<?php echo $pictures; ?>" alt="<?php echo $post['title']?>">
+							<a href="/public/images/upload/<?php echo $pictures; ?>"><img src="/public/images/upload/<?php echo $pictures; ?>" alt="<?php echo $post['title']?>"></a>
 						</div>	
 					</div>
 				</div>
@@ -84,7 +84,7 @@
 							</div>
 							</div>
 							<div class="form-group row">
-								<label for="comment" class="col-sm-2 col-form-label">Commantaire :</label>
+								<label for="comment" class="col-sm-2 col-form-label">Commentaire :</label>
 							<div class="col-sm-10">
 								<textarea id="comment" name="comment" class="form-control"></textarea>
 							</div>
