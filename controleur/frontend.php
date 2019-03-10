@@ -281,8 +281,9 @@ function recupMail()
 	{
 		$control_mail = new \openclassrooms\blog\model\userManager();
 		$resultat_recup = $control_mail->controlMail($recup_mail);
-		if($resultat_recup)
+		if($resultat_recup == 1)
 		{
+			
 			$pseudo = $resultat_recup['pseudo'];
 			$_SESSION['mail_recup'] = $recup_mail;
 			$recup_code = "";

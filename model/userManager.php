@@ -28,7 +28,7 @@ class userManager extends Manager
 		$db = $this->dbConnect();
 		$req = $db->prepare('SELECT id, pseudo FROM user WHERE email = ? ');
 		$req->execute(array($email));
-		$resultat_recup = $req->fetch();
+		$resultat_recup = $req->rowCount();
 
 		return $resultat_recup;
 	}
